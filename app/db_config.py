@@ -22,7 +22,7 @@ try:
     )
 
     if connection.is_connected():
-        session = connection.cursor()
+        session = connection.cursor(dictionary=True)
         print("Connected to MySQL database")
 except Error as e:
     print("Error while connecting to MySQL", e)
