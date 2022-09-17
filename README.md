@@ -19,6 +19,15 @@
 - Se usará pre-commit para tener un control más estricto del estandar pep8 y el orden de llamado de dependencias.
 - las variables del entorno estarán en el archivo `.env` el cual estará excluido del repositorio por razones de seguridad.
 
+## Uso de la API
+
+1. Crear ambiente virtual: `python -m venv venv`
+2. Instalar dependencias: `poetry install`
+3. Iniciar el servidor HTTP: `python app/server.py 8000`
+4. Uso de la API: `curl http://localhost:8000/`
+    + La API se puede consultar con los siguientes filtros **year**, **city** y **status**
+        * **Ejemplo:** `http://localhost:8000/?city=bogota&year=2000&status=en_venta`
+
 # 2. Likes de usuarios a propiedades
 
 Se creó una tabla llamada **user_property_like** la cual tiene dos llaves foraneas: **auth_user_id** y **property_id**; las dos llaves foraneas son relaciones de tipo many to one, **auth_user_id**  se relaciona con la tabla **auth_user** y **property_id** se relaciona con la tabla **property**.
